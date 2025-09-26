@@ -22,6 +22,8 @@ and used **CodeCarbon** to track the environmental impact of training the models
 ├── code5_simulated_metrics.py # Randomized metrics simulation for testing
 ├── README.md # Project documentation
 
+Install dependencies using pip:
+pip install pandas numpy matplotlib scikit-learn prometheus-client codecarbon
 
 Also install:
 
@@ -34,11 +36,19 @@ Grafana → [Download here](https://grafana.com/grafana/download)
 
 Example for basic regression:
 
+python code1_basic_regression.py
 
 2. Start Prometheus
 
 Make sure your prometheus.yml is configured like this:
+yaml
+scrape_configs:
+  - job_name: "advertising_model"
+    static_configs:
+      - targets: ["localhost:8000"]
 
+Run Prometheus
+prometheus --config.file=prometheus.yml
 
 3. Connect Prometheus to Grafana
 
@@ -60,5 +70,17 @@ advertising_model_carbon_emissions
 
 See metrics update in real-time.
 
-<img width="1098" height="610" alt="image" src="https://github.com/user-attachments/assets/d8dfb4d4-f985-48a1-ba97-ec9d619dde6f" />
+Example Outputs
+
+Scatter plot of Actual vs Predicted Sales
+<img width="793" height="685" alt="Screenshot 2025-09-25 142807" src="https://github.com/user-attachments/assets/22c0f354-ef47-4ac0-9c79-5c48dd4b8935" />
+
+
+Prometheus metrics endpoint
+<img width="1099" height="610" alt="Screenshot 2025-09-26 172835" src="https://github.com/user-attachments/assets/0fb7352a-8b15-4de5-97c8-c9da9dd98759" />
+
+Grafana dashboards for MSE, RMSE, R², CO₂ emissions
+<img width="1078" height="613" alt="Screenshot 2025-09-26 172709" src="https://github.com/user-attachments/assets/2d971061-a980-4ae3-988b-4632d2a9acdf" />
+
+
 
