@@ -16,10 +16,15 @@ and used **CodeCarbon** to track the environmental impact of training the models
 
 ##  Repository Structure 
 ├── code1_basic_regression.py # Basic Linear Regression with Advertising dataset
+
 ├── code2_synthetic_data.py # Regression with synthetic data
+
 ├── code3_prometheus_monitoring.py # Linear Regression + Prometheus metrics
+
 ├── code4_codecarbon.py # Linear Regression + CodeCarbon integration
+
 ├── code5_simulated_metrics.py # Randomized metrics simulation for testing
+
 ├── README.md # Project documentation
 
 Install dependencies using pip:
@@ -48,6 +53,7 @@ scrape_configs:
       - targets: ["localhost:8000"]
 
 Run Prometheus
+
 prometheus --config.file=prometheus.yml
 
 3. Connect Prometheus to Grafana
