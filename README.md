@@ -27,7 +27,7 @@ and used **CodeCarbon** to track the environmental impact of training the models
 
 ├── README.md # Project documentation
 
-Install dependencies using pip:
+## Install dependencies using pip:
 pip install pandas numpy matplotlib scikit-learn prometheus-client codecarbon
 
 Also install:
@@ -36,17 +36,19 @@ Prometheus → [Download here](https://prometheus.io/download/)
 
 Grafana → [Download here](https://grafana.com/grafana/download)
 
-🚀 How to Run
-1. Run the ML Model
+## How to Run
+## 1. Run the ML Model
 
 Example for basic regression:
 
 python code1_basic_regression.py
 
-2. Start Prometheus
+## 2. Start Prometheus
 
 Make sure your prometheus.yml is configured like this:
+
 yaml
+
 scrape_configs:
   - job_name: "advertising_model"
     static_configs:
@@ -56,7 +58,7 @@ Run Prometheus
 
 prometheus --config.file=prometheus.yml
 
-3. Connect Prometheus to Grafana
+## 3. Connect Prometheus to Grafana
 
 Open Grafana at http://localhost:3000
 
@@ -72,11 +74,11 @@ advertising_model_r2
 
 advertising_model_carbon_emissions
 
-4. View Dashboard
+## 4. View Dashboard
 
 See metrics update in real-time.
 
-Example Outputs
+## Example Outputs
 
 Scatter plot of Actual vs Predicted Sales
 <img width="793" height="685" alt="Screenshot 2025-09-25 142807" src="https://github.com/user-attachments/assets/22c0f354-ef47-4ac0-9c79-5c48dd4b8935" />
